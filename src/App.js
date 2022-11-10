@@ -6,6 +6,8 @@ import Col from "react-bootstrap/Col";
 import CurrentLocation from "./Components/Map";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import env from "react-dotenv";
+console.log(env);
 
 export class MapContainer extends Component {
   state = {
@@ -67,5 +69,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyC7cpfQwXZb7E6Py_bu-ILYxOpE826Ex24",
+  apiKey: process.env.REACT_APP_API_key,
 })(MapContainer);
